@@ -1,13 +1,55 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 	<head> 
-		<title>LASTNAME Chapter14HandsOnExercise</title> 
+		<title>Good Chapter14HandsOnExercise</title> 
 		<meta charset="utf-8"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 		<style>
 		
 		</style>
 	</head> 
 <body> 
-
+    <main>
+        <h1>Form Validator With JS</h1>
+		<form method="POST" action="http://webdevbasics.net/scripts/demo.php" onsubmit="return validateEntry()">
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name"><br>
+			<label for="age">Age:</label>
+			<input type="text" name="age" id="age"><br>
+			<label for="city">City:</label>
+			<input type="text" name="city" id="city"><br>
+			<input type="submit" value="send for validation" id="submit">
+		</form> 
+        <br>
+        
+    		<h1>Slideshow</h1>
+		<div class="fotorama" data-autoplay="true">
+			<img src="photo-1601219992101-9c6430278e68.jpg" data-caption="Drown" alt="Drown">
+			<img src="photo-1600475952217-269feeae7812.jpg" data-caption="Ring Ring $" alt="Money">
+			<img src="photo-1600181957663-d8b921a1f516.jpg" data-caption="Pothead" alt="pothead">
+		</div>
+        
+	<script>
+		function validateEntry() {
+			if(document.forms[0].name.value == "") {
+				alert("Name field cannot be empty.")
+				return false
+			}
+			if(document.forms[0].age.value < 18) {
+				alert("You must be 18 or older to use this site.")
+				return false
+			}
+			if(document.forms[0].city.value == "") {
+				alert("City field cannot be empty.")
+				return false
+			}
+			alert("Validation Accepted")
+			return true
+		}
+	</script>
+    
+    </main>
 </body> 
 </html> 
